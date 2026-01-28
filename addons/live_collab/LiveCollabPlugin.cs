@@ -11,7 +11,7 @@ public partial class LiveCollabPlugin : EditorPlugin
     private PresenceOverlay _presenceOverlay;
     
     private string _userId = "A"; // Set to "A" or "B" - should be configurable
-    private const string SERVER_URL = "ws://localhost:8080"; // Change to your relay server
+    private const string SERVER_URL = "ws://192.168.0.245:8080"; // Change to your relay server
     
     private bool _isApplyingRemote = false;
     private Node _selectedNode = null;
