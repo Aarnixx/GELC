@@ -1,37 +1,40 @@
 using Godot;
 using System;
 
-public class PresenceOverlay
+namespace LiveCollab
 {
-    private string _remoteSelectedPath = "";
-    private string _remoteTool = "";
-
-    public void UpdatePresence(PresenceMessage presence)
+    public partial class PresenceOverlay : GodotObject
     {
-        _remoteSelectedPath = presence.Selected;
-        _remoteTool = presence.Tool;
+        private string _remoteSelectedPath = "";
+        private string _remoteTool = "";
 
-        // For MVP, we just log the presence
-        // In a full implementation, this would draw visual overlays in the editor
-        if (!string.IsNullOrEmpty(_remoteSelectedPath))
+        public void UpdatePresence(PresenceMessage presence)
         {
-            GD.Print($"LiveCollab: Remote user selected {_remoteSelectedPath} with tool {_remoteTool}");
+            _remoteSelectedPath = presence.Selected;
+            _remoteTool = presence.Tool;
+
+            // For MVP, we just log the presence
+            // In a full implementation, this would draw visual overlays in the editor
+            if (!string.IsNullOrEmpty(_remoteSelectedPath))
+            {
+                GD.Print($"LiveCollab: Remote user selected {_remoteSelectedPath} with tool {_remoteTool}");
+            }
         }
-    }
 
-    public string GetRemoteSelectedPath()
-    {
-        return _remoteSelectedPath;
-    }
+        public string GetRemoteSelectedPath()
+        {
+            return _remoteSelectedPath;
+        }
 
-    public string GetRemoteTool()
-    {
-        return _remoteTool;
-    }
+        public string GetRemoteTool()
+        {
+            return _remoteTool;
+        }
 
-    public void Clear()
-    {
-        _remoteSelectedPath = "";
-        _remoteTool = "";
+        public void Clear()
+        {
+            _remoteSelectedPath = "";
+            _remoteTool = "";
+        }
     }
 }
