@@ -1,0 +1,24 @@
+{
+  "name": "godot-live-collab-relay",
+  "version": "1.0.0",
+  "description": "WebSocket relay server for Godot Live Collaboration",
+  "main": "relay-server.js",
+  "scripts": {
+    "start": "node relay-server.js",
+    "dev": "nodemon relay-server.js"
+  },
+  "keywords": [
+    "godot",
+    "collaboration",
+    "websocket",
+    "relay"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
